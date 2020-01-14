@@ -1,20 +1,15 @@
 var Connection = require('tedious').Connection;
 var config = {
-    server: '#######',
-    authentication: {
-        type: 'default',
-        options: {
-            userName: 'sa',
-            password: 'sadbuttrue'
-        }
-    },
+    user: 'sa',
+    password: 'sadbuttrue',
+    server: 'DESKTOP-VPL2CH7',
+    driver: 'tedious',
+    database: 'nodeSample',
+    port:1444,
     options: {
-        database: 'nodeSample',
-        instanceName: 'Sqlexpress',
-        rowCollectionOnDone: true,
-        useColumnNames: false
+        instanceName: 'sql'
     }
-}
+};
 var connection = new Connection(config);
 connection.on('connect', function (err) {
     if (err) {
